@@ -1,3 +1,6 @@
+/*2023.01.09
+A배열과 B배열을 입력받아 작은 곱 만들어 출력하기
+*/
 #include <iostream>
 #include <algorithm>
 #include <vector>
