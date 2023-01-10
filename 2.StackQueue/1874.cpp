@@ -6,22 +6,49 @@
 있다면 어떤 순서로 push와 pop연산을 수행해야하는지를 알아낼 수 있다.
 이를 계산하는 프로그램을 작성
 */
-
+//endl보다는 '\n'을 사용하여 시간을 단축해라
 #include <iostream>
 #include <stack>
+#include <deque>
 using namespace std;
 
 int N;//수열의 수를 저장하는 변수
+stack <int> my_stack;//입력받는 수를 저장하는 stack
+deque <string> represent;//push연산은 +로, pop연산은 -로 저장하는 deque
 
 int main(){
     ios::sync_with_stdio(false);
     cin.tie(0);
 
     cin >> N;
-    stack <int> my_stack;
-
-    for(int i =0 ; i<N ; i++){
-        
+    
+    int temp;//입력받는 수
+    int max =0;//현재까지 입력받은 값의 최댓값을 저장
+    while(N--){
+        cin >> temp;
+        if(my_stack.empty() || temp >= my_stack.top()){
+            if(temp> max){
+                for(int i = max+1;i<=temp ; i++){
+                    my_stack.push(i);
+                    represent.push_back("+");
+                }//본인보다 작은 수와 stack에 있는 가장 큰 수 사이만큼은 push
+                max = temp;
+            }
+            my_stack.pop(); //본인을 pop해줌
+            represent.push_back("-");
+        }//stack에 있는 가장 큰수와 같으면 pop
+        else {
+            represent.push_front("NO");
+        }//stack에 있는 가장 큰 수보다 작으면 연산 불가
     }
 
+    if(represent.front()=="NO"){
+        cout << "NO" <<'\n';
+        return 0;
+    }
+
+    while(!represent.empty()){
+        cout<<represent.front()<<'\n';
+        represent.pop_front();
+    }
 }
