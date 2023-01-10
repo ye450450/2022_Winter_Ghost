@@ -5,6 +5,9 @@ int kg;//상근이가 배달한는 섵탕 무게
 int DP[50001];
 
 int main(){
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+
     cin >> kg;
     DP[3]=DP[5]=1;//3KG과 5KG 봉지만 존재
 
