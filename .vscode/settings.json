@@ -15,6 +15,14 @@
         "iosfwd": "cpp",
         "ostream": "cpp",
         "stack": "cpp",
-        "xstring": "cpp"
+        "xstring": "cpp",
+        "queue": "cpp",
+        "xiosbase": "cpp",
+        "algorithm": "cpp",
+        "iterator": "cpp",
+        "xhash": "cpp",
+        "xmemory": "cpp",
+        "xtree": "cpp",
+        "xutility": "cpp"
     }
 }
