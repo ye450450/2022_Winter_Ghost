@@ -28,8 +28,8 @@
 ![image](https://user-images.githubusercontent.com/104772331/211724993-2aa2aee4-4aa6-4656-ae03-c634b3a3a0f4.png)       
 -> 4번과 연결된 2,5번까지 오는 거리 계산 후 비교            
 -> 방문하지 않은 노드 중 거리값이 작은 노드 선택(2번이나 5번 노드 선택)   
--> 이후는 똑같은 과정 반복           
-![image](https://user-images.githubusercontent.com/104772331/211851517-45ab8bbc-6e81-429a-9cd7-bea0605c9a5b.png)    
+-> 이후는 똑같은 과정 반복            
+<img src = "https://user-images.githubusercontent.com/104772331/211851517-45ab8bbc-6e81-429a-9cd7-bea0605c9a5b.png" width="700" height="600"/> 
 -> 최종 결과값         
 
  ## 우선순위 큐(priority Queue)를 활용
