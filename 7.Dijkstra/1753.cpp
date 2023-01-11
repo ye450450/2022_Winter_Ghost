@@ -15,7 +15,7 @@ using namespace std;
 
 long long dist[20001]; //최단 경로 값들을 저장
 vector <pair<int,int>> graph[20001]; //입력받는 도착노드와 weight를 저장
-priority_queue <pair<int,int>> pq; //weight와 시작지점을 저장
+priority_queue <pair<int,int>> pq; //weight와 시작지점을 저장 (거리가 가까운 것을 먼저 넣는다.)
 int V, E, K;
 
 void dijkstra(){
@@ -58,10 +58,7 @@ int main(){
 
     dijkstra();
     for(int i =1 ;i<=V ;i++){
-        if(dist[i]==INF) {
-            cout << "INF"<<'\n';
-            continue;
-        }
-        cout << dist[i]<< '\n';
+        if(dist[i]==INF) cout << "INF"<<'\n';
+        else cout << dist[i]<< '\n';
     }
 }
