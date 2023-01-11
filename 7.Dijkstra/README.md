@@ -40,7 +40,7 @@
  1. 최단 거리를 초기화
  2. 출발 노드를 설정
 
-예시)
+예시)        
 ![image](https://user-images.githubusercontent.com/104772331/211726622-72ab7a34-66bf-4971-9566-2feaf04bfe70.png)       
 -> 시작노드의 거리를 업데이트     
 -> priority queue에 저장
