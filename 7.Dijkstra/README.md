@@ -16,7 +16,7 @@
  4. 해당 노드를 거쳐 다른 노드로 가는 weight를 계산해 최단거리를 업데이트
  5.  3과 4번 과정 반복
 
-예시)
+예시)       
 ![image](https://user-images.githubusercontent.com/104772331/211724409-80bf614e-6e6b-4966-9b04-065f6a47c064.png)     
 -> 무한으로 초기화 , 출발노드 : 1 , 도착노드 : 6
 ![image](https://user-images.githubusercontent.com/104772331/211724533-595fe184-f8ab-4ca7-9941-e851e24129a8.png)        
