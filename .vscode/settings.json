@@ -59,5 +59,6 @@
         "xlocnum": "cpp",
         "xstddef": "cpp",
         "xtr1common": "cpp"
-    }
+    },
+    "C_Cpp.errorSquiggles": "disabled"
 }
