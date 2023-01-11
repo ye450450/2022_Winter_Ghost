@@ -17,17 +17,17 @@
  5.  3과 4번 과정 반복
 
 예시)
-![image](https://user-images.githubusercontent.com/104772331/211724409-80bf614e-6e6b-4966-9b04-065f6a47c064.png)
+![image](https://user-images.githubusercontent.com/104772331/211724409-80bf614e-6e6b-4966-9b04-065f6a47c064.png)     
 -> 무한으로 초기화 , 출발노드 : 1 , 도착노드 : 6
-![image](https://user-images.githubusercontent.com/104772331/211724533-595fe184-f8ab-4ca7-9941-e851e24129a8.png)
+![image](https://user-images.githubusercontent.com/104772331/211724533-595fe184-f8ab-4ca7-9941-e851e24129a8.png)        
 -> 출발노드를 0으로 초기화
-![image](https://user-images.githubusercontent.com/104772331/211724579-90cd7886-a711-4a28-9336-034bf92cc674.png)
+![image](https://user-images.githubusercontent.com/104772331/211724579-90cd7886-a711-4a28-9336-034bf92cc674.png)           
 -> 인접한 노드 중 방문하지 않은 노드의 거리값을 비교해 업데이트
 -> 방문하지 않은 노드 중 거리값이 작은 노드를 선택 (4번 노드 선택)
--> 1 노드는 방문처리
-![image](https://user-images.githubusercontent.com/104772331/211724993-2aa2aee4-4aa6-4656-ae03-c634b3a3a0f4.png)
--> 4번과 연결된 2,5번까지 오는 거리 계산 후 비교
--> 방문하지 않은 노드 중 거리값이 작은 노드 선택(2번이나 5번 노드 선택)
+-> 1 노드는 방문처리              
+![image](https://user-images.githubusercontent.com/104772331/211724993-2aa2aee4-4aa6-4656-ae03-c634b3a3a0f4.png)       
+-> 4번과 연결된 2,5번까지 오는 거리 계산 후 비교           
+-> 방문하지 않은 노드 중 거리값이 작은 노드 선택(2번이나 5번 노드 선택)        
 
  ## 우선순위 큐(priority Queue)를 활용
  > 순차 탐색을 사용하는 경우 시간이 오래 걸릴 수 있는 점을 개선        
@@ -41,13 +41,13 @@
  2. 출발 노드를 설정
 
 예시)
-![image](https://user-images.githubusercontent.com/104772331/211726622-72ab7a34-66bf-4971-9566-2feaf04bfe70.png)
+![image](https://user-images.githubusercontent.com/104772331/211726622-72ab7a34-66bf-4971-9566-2feaf04bfe70.png)       
 -> 시작노드의 거리를 업데이트     
 -> priority queue에 저장
-![image](https://user-images.githubusercontent.com/104772331/211726727-b4303097-bed5-4ff5-b8c1-9527f3305880.png)
+![image](https://user-images.githubusercontent.com/104772331/211726727-b4303097-bed5-4ff5-b8c1-9527f3305880.png)          
 -> queue에서 꺼내어 인접한 노드를 봄       
 -> 거리값이 작으면 업데이트하고, 큐에 저장
-![image](https://user-images.githubusercontent.com/104772331/211727108-1a34a30e-a8d4-4fda-afba-74241c43863a.png)
+![image](https://user-images.githubusercontent.com/104772331/211727108-1a34a30e-a8d4-4fda-afba-74241c43863a.png)           
 -> 노드를 꺼내서 인접 노드를 조사   
 -> 위에서와 같이 거리값이 작으면 업데이트하고, 큐에 저장   
 -> 4에서 2로 가는 경우 3이기 때문에 업데이트를 하지 않고, 큐에도 저장하지 않음.    
