@@ -18,66 +18,36 @@ int n;//deque의 크기
 int m;//뽑아내는 개수
 deque <int> my_deque;
 
-//3번 연산 함수
-// int third_cal(int count, int temp , depue& <int> temp){
-// while(temp!=temp.front())
-// return count;
-// }
-//2번 연산 함수
-
-
 int main(){
     ios::sync_with_stdio(false); cin.tie(0);
 
     cin >> n >> m;
 
-    for(int i=1 ;i<=n;i++)
-        my_deque.push_back(i);//숫자를 넣어준다.
-
-    int count;//2,3연산의 수를 계산
-    for(int i=0 ;i<m ;i++){
-        cout << "-------" <<count<<"\n";
-        int temp;
-        cin >> temp;
-        if(temp==my_deque.front()){
-            my_deque.pop_front();//1번연산
+    for(int i=0 ;i<n;i++)
+        my_deque.push_back(i+1);//n까지의 숫자를 넣어준다.
+    int cal_count=0;//2번과 3번 연산의 횟수를 저장
+    int start_point=0;//찾고나서 나온 그 위치에서부터 다시 찾기 때문에 위치는 저장
+    
+    while(m--){
+        int delete_num=0;//입력받는 제거할 숫자
+        cin >> delete_num;
+        
+        int count=0;//제거할 숫자가 나올때까지 걸린 횟수
+        for(int i=0 ;i <my_deque.size();i++){
+            if(my_deque[(start_point+i)%my_deque.size()]==delete_num) {
+                start_point=(start_point+i)%my_deque.size();
+                break;
+            }
+            count++;
+        }
+        if(count==0) {
+            my_deque.erase(my_deque.begin()+start_point);//찾은 숫자를 제거
             continue;
         }
-
-        int sub = temp - my_deque.front();
-        if(sub>0){
-            if(sub > my_deque.size()/2){
-                while(temp !=my_deque.front()){
-                    my_deque.push_front(my_deque.back());
-                    my_deque.pop_back();
-                    count++;
-                }
-            }//3번 연산을 함 (오른쪽에 가까운 경우)
-            else{
-                while(temp !=my_deque.front()){
-                my_deque.push_back(my_deque.front());
-                my_deque.pop_front();
-                count++;
-                }
-            }//2번 연산 (왼쪽에 가까운 경우)
-            continue;
-        }//입력값이 앞의 원소보다 큰 경우
-
-        sub = my_deque.back() - temp;
-            if(sub < my_deque.size()/2){
-                while(temp !=my_deque.front()){
-                    my_deque.push_front(my_deque.back());
-                    my_deque.pop_back();
-                    count++;
-                }
-            }//3번 연산을 함 (오른쪽에 가까운 경우)
-            else{
-                while(temp !=my_deque.front()){
-                my_deque.push_back(my_deque.front());
-                my_deque.pop_front();
-                count++;
-                }
-            }//2번 연산 (왼쪽에 가까운 경우)
+        else if(count<=my_deque.size()/2) cal_count+=count;//2번연산을 진행
+        else cal_count+=my_deque.size()-count; // 3번연산을 진행하기 때문에 맨 앞에 자신을 가져와야한다.
+        my_deque.erase(my_deque.begin()+start_point);//찾은 숫자를 제거
     }
-    cout <<count;
+    cout << cal_count;
+    return 0;
 }
