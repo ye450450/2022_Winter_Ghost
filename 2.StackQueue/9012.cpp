@@ -13,38 +13,33 @@ VPS인지 아닌지를 판단해서 그 결과를 yes와 no로 나타내어야�
 using namespace std;
 
 int T; //테스트 케이스 개수이다.
-stack <string> my_stack;//괄호들을 저장하는 스택
-
-// string vps_check(char* arr_c ){
-//     for(char c : arr_c)
-//         cout << c << '\n';
-//         //my_stack.push(c);//stack에 넣는다.
-// }
+stack <char> my_stack;//괄호들을 저장하는 스택
 
 int main(){
     cin >> T;
     while(T--){
+        while(!my_stack.empty())
+            my_stack.pop();
         string s;//괄호들을 입력받아저장
-        bool no_check;//잘못되었는지를 저장
+        bool no_check=false;//잘못되었는지를 저장
         cin >> s;
-        char c_arr [s.length()+1];//괄호들을 하나씩 저장
-        s.copy(c_arr,s.length()+1);
-        //vps_check(c_arr);
+        char c_arr [s.length()];//괄호들을 하나씩 저장
+        for(int i =0 ;i <s.length();i++) c_arr[i]=s.at(i);
+        
         for(char c : c_arr){
-            if(c=='(')
-                my_stack.push(c);//여는 괄호이면 stack에 넣는다.
-            else{
-                if(my_stack.top()=='('){
-                    my_stack.pop();
-                    my_stack.push(c);
-                }
-                else{
-                    cout << "NO" <'\n';
+            if(c=='(') my_stack.push(c);//여는 괄호이면 stack에 넣는다.
+            else if (c==')'){
+                if(my_stack.size()==0) {
+                    cout << "NO" << '\n';
                     no_check=true;
                     break;
                 }
+                else if(my_stack.top()=='(')
+                    my_stack.pop();
             }//닫는 괄호인 경우
         }
-        if(my_stack)
+        if(no_check) continue;
+        else if(!no_check && my_stack.empty()) cout << "YES" << '\n';
+        else if(!my_stack.empty()) cout << "NO" << '\n';
     }
 }
