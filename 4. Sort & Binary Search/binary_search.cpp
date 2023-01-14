@@ -30,6 +30,10 @@ bool binary_search_func(int arr[], int left, int right, int element) {
     }
     return 0; 
 }
+
+// 0: left, 9: right
+// mid = 4
+// 1 2 3 4 5 6 7 8 9 10
 int main(void) { 
     ios::sync_with_stdio(false); cin.tie(0) ; 
 
@@ -38,7 +42,7 @@ int main(void) {
     sort(arr, arr + SIZE) ; 
 
     int find_element = 52 ; 
-
+ 
     if ( binary_search_func(arr, 0, SIZE - 1, find_element) ) {
         cout << "FIND: " << find_element << '\n'; 
     } else { 

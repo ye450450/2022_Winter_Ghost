@@ -20,6 +20,7 @@ void BFS(int start) {
     Q.push(start) ;
     visited[start] = true ; 
 
+    // Q: start: 1
     while ( !Q.empty() ) {
         int curr = Q.front() ; 
         Q.pop() ; 

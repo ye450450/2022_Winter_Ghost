@@ -11,6 +11,7 @@
 #define SIZE 101 
 using namespace std ; 
 
+<- 
 int dx[4] = {-1, 0, 1, 0} ; 
 int dy[4] = { 0, 1, 0,-1} ; 
 int MAP[SIZE][SIZE] ; 
@@ -45,7 +46,7 @@ void BFS() {
             // MAP에서 값 1인 것만 이동할 수 있도록, 
             if ( MAP[ny][nx] == 0 || value[ny][nx] != 0 ) continue ; 
             // 다음 위치 값 = 현재 위치 값 + 1
-            value[ny][nx] = value[curr_y][curr_x] + 1 ; 
+            value[ny][nx] = value[curr_y][curr_x] + 1 ;     
             Q.push({nx, ny}) ; 
         }
     }

@@ -12,12 +12,22 @@ using namespace std ;
 
 int N, M, V; 
 vector<int> graph[10001] ;
+
+// int graphs[10001][10001];
+
 bool visited[10001] ; 
 void DFS(int start) { // DFS(1) -> DFS(2) -> DFS(4) -> DFS(3) 
     if ( visited[start] ) return ; 
     
     visited[start] = true ; 
     cout << start << ' '; 
+
+
+    // for (int i = 0 ; i < N ; i++) { 
+    //     if ( graphs[start][i] == 1 && !visited[i]) { 
+    //         DFS(i);
+    //     }
+    // }
 
     for (int i = 0 ; i < graph[start].size(); i++) { 
         int next_node = graph[start][i] ; // 4 -> 3
@@ -26,6 +36,15 @@ void DFS(int start) { // DFS(1) -> DFS(2) -> DFS(4) -> DFS(3)
         }
     } 
 }
+
+// 0 1 0 
+// 1 0 1
+// 0 1 0 
+
+// 2
+// 1 3
+// 2
+
 int main(void) {
     ios::sync_with_stdio(false); cin.tie(0) ; 
 

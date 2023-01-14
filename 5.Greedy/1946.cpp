@@ -23,7 +23,7 @@ int main(void){
         sort(score,score + count);//정렬
 
         int result =1;//서류 1등은 무조건 선발
-        int temp= score[0].second;//면접성적을 서류 성적의 ㄴ1등으로 초기화
+        int temp= score[0].second;//면접성적을 서류 성적의 1등으로 초기화
         for(int i = 1; i< count ; i++){
             if(score[i].second<temp){
                 result++;
